@@ -1,0 +1,258 @@
+{
+  "info": {
+    "name": "Test collection",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": null
+  },
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "",
+      "type": "string"
+    }
+  ],
+  "auth": null,
+  "item": [
+    {
+      "_type": "container",
+      "description": null,
+      "name": "Imdb",
+      "item": [
+        {
+          "_type": "endpoint",
+          "name": "Create Movie",
+          "request": {
+            "description": "Add a movie to the database",
+            "url": {
+              "raw": "{{baseUrl}}/movies/create-movie",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "movies",
+                "create-movie"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "type": "text",
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"title\": \"title\",\n    \"rating\": 1.1\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "name": "Success",
+              "status": "OK",
+              "code": 200,
+              "originalRequest": {
+                "description": "Add a movie to the database",
+                "url": {
+                  "raw": "{{baseUrl}}/movies/create-movie",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "movies",
+                    "create-movie"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "type": "text",
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "auth": null,
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n    \"title\": \"title\",\n    \"rating\": 1.1\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "description": null,
+              "body": "\"string\"",
+              "_postman_previewlanguage": "json"
+            }
+          ]
+        },
+        {
+          "_type": "endpoint",
+          "name": "Get Movie",
+          "request": {
+            "description": "Retrieve a movie from the database based on the ID",
+            "url": {
+              "raw": "{{baseUrl}}/movies/:id",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "movies",
+                ":id"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "key": "id",
+                  "description": null,
+                  "value": "tt0111161"
+                }
+              ]
+            },
+            "header": [
+              {
+                "type": "text",
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null,
+            "body": null
+          },
+          "response": [
+            {
+              "name": "Success",
+              "status": "OK",
+              "code": 200,
+              "originalRequest": {
+                "description": "Retrieve a movie from the database based on the ID",
+                "url": {
+                  "raw": "{{baseUrl}}/movies/:id",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "movies",
+                    ":id"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "key": "id",
+                      "description": null,
+                      "value": "tt0111161"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "type": "text",
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "auth": null,
+                "body": null
+              },
+              "description": null,
+              "body": "{\n    \"id\": \"tt0111161\",\n    \"title\": \"The Shawshank Redemption\",\n    \"rating\": 9.3\n}",
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "name": "Movie Does Not Exist Error",
+              "status": "Movie Does Not Exist Error",
+              "code": 404,
+              "originalRequest": {
+                "description": "Retrieve a movie from the database based on the ID",
+                "url": {
+                  "raw": "{{baseUrl}}/movies/:id",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "movies",
+                    ":id"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "key": "id",
+                      "description": null,
+                      "value": "tt1234"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "type": "text",
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "auth": null,
+                "body": null
+              },
+              "description": null,
+              "body": "\"tt1234\"",
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "name": "Movie Does Not Exist Error",
+              "status": "Movie Does Not Exist Error",
+              "code": 404,
+              "originalRequest": {
+                "description": "Retrieve a movie from the database based on the ID",
+                "url": {
+                  "raw": "{{baseUrl}}/movies/:id",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "movies",
+                    ":id"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "key": "id",
+                      "description": null,
+                      "value": "id"
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "type": "text",
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "auth": null,
+                "body": null
+              },
+              "description": null,
+              "body": "\"string\"",
+              "_postman_previewlanguage": "json"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
